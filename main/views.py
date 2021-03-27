@@ -3,4 +3,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("")
+    return render(request, '')
+
+
+def lk(request):
+    return HttpResponse("Личный Кабинет")
