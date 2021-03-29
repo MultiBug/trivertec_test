@@ -4,4 +4,6 @@ from . import views
 urlpatterns = [
     path('', views.index),
     path('lk', views.lk),
+    path('portfolio-details.html', views.portfolio),
+    path('inner-page.html', views.inner),
 ]

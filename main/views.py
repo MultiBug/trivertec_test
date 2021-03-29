@@ -8,3 +8,11 @@ def index(request):
 
 def lk(request):
     return HttpResponse("Личный Кабинет")
+
+
+def portfolio(request):
+    return render(request, 'main/portfolio-details.html')
+
+
+def inner(request):
+    return render(request, 'main/inner-page.html')
