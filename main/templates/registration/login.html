@@ -87,10 +87,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Внутренняя страница</h2>
+          <h2>Личный кабинет</h2>
           <ol>
             <li><a href="index.html">Главная страница</a></li>
-            <li>Внутренняя страница</li>
+            <li>Личный кабинет</li>
           </ol>
         </div>
 
@@ -100,7 +100,18 @@
     <section class="inner-page">
       <div class="container">
         <p>
-          Пример шаблона внутренней страницы
+          <form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Запомнить меня
+      </label>
+      <p><a href="{% url 'password_reset' %}">Восстановить пароль</a></p>
+    </div>
+    <button class="w-10 btn btn-lg btn-primary" type="submit">Войти</button>
+
+</form>
         </p>
       </div>
     </section>
