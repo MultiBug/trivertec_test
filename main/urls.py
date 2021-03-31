@@ -10,4 +10,5 @@ urlpatterns = [
     path('accounts/login/index.html', views.index),
     path('accounts/login/portfolio-details.html', views.portfolio),
     path('accounts/login/index.html', views.index),
+    path('accounts/password/reset/index.html', views.index),
 ]

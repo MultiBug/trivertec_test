@@ -1,11 +1,94 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{% block head_title %}{% endblock %}</title>
-    {% block extra_head %}
-    {% endblock %}
-  </head>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Trivertec</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'main/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'main/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'main/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'main/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Squadfree - v4.0.1
+  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+
   <body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>Trivertec</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="{% static 'main/img/logo.png' %}" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Домой</a></li>
+          <li><a class="nav-link scrollto" href="#about">О Нас</a></li>
+          <li><a class="nav-link scrollto" href="#services">Сервисы</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Портфолио</a></li>
+          <li><a class="nav-link scrollto" href="#team">Команда</a></li>
+          <!--<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>
+          <li>
+              {% if user.is_authenticated %}
+              <a class="nav-link scrollto" href="{% url 'account_logout' %}">Выход</a></li>
+            {% else %}
+                  <a class="nav-link scrollto" href="{% url 'account_login' %}">Личный кабинет</a></li>
+              <a class="nav-link scrollto" href="{% url 'account_signup' %}">Регистрация</a>
+            {% endif %}
+        </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+<br><br><br><br>
     {% block body %}
 
     {% if messages %}
@@ -18,23 +101,102 @@
       </ul>
     </div>
     {% endif %}
-
-    <div>
-      <strong>Menu:</strong>
-      <ul>
-        {% if user.is_authenticated %}
-        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
-        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
-        {% else %}
-        <li><a href="{% url 'account_login' %}">Sign In</a></li>
-        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-        {% endif %}
-      </ul>
-    </div>
     {% block content %}
     {% endblock %}
     {% endblock %}
     {% block extra_body %}
     {% endblock %}
-  </body>
+  <br><br><br><br>
+    <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Trivertec</h3>
+              <p class="pb-3"><em>График работы:<br>
+                с понедельника по субботу с 8:00 до 18:00</em></p>
+              <p>
+                Казанская пл., 2 <br>
+                Санкт-Петербург, 191186<br>
+                Россия<br><br>
+                <strong>Phone:</strong> +79208850150<br>
+                <strong>Email:</strong> aruytehno@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Быстрый переход</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Домой</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">О Нас</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Сервисы</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Портфолио</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Команда</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Другие сервисы</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Дизайн</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Разработка</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Поддержка проектов</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Маркетинг</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Графический Дизайн</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Другие новости</h4>
+            <p>Внимание! Амбициозная и перспективная команда разработчиков, покоряет Санкт-Петербург!</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Подписаться">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Squadfree</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'main/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'main/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'main/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'main/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'main/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'main/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'main/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'main/js/main.js' %}"></script>
+
+</body>
 </html>
