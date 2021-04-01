@@ -12,5 +12,7 @@ urlpatterns = [
     path('accounts/logout/index.html', views.index),
     path('accounts/signup/index.html', views.index),
     path('accounts/profile/', views.index),
-    path('accounts/confirm-email/index.html', views.index)
+    path('accounts/confirm-email/index.html', views.index),
+    path("signup/", views.signup, name="account_signup"),
+    path("login/", views.login, name="account_login"),
 ]

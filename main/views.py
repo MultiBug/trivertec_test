@@ -16,3 +16,11 @@ def portfolio(request):
 
 def inner(request):
     return render(request, 'main/inner-page.html')
+
+
+def login(request):
+    return render(request, 'account/login.html')
+
+
+def signup(request):
+    return render(request, 'account/signup.html')
