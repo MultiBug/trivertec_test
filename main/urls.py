@@ -12,4 +12,5 @@ urlpatterns = [
     path('accounts/logout/index.html', views.index),
     path('accounts/signup/index.html', views.index),
     path('accounts/profile/', views.index),
+    path('accounts/confirm-email/index.html', views.index)
 ]
