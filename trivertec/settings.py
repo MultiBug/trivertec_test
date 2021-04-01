@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
     'main',
     'django.contrib.sites',
     'allauth',
@@ -124,10 +123,19 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
 
 SITE_ID = 1
-
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/app-messages'
+
+ACCOUNT_LOGOUT_ON_GET = 'True'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'trivertec.mail@gmail.com'
+EMAIL_HOST_PASSWORD = 'Zt,ecj,frd1100'
+EMAIL_PORT = 587
+
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'

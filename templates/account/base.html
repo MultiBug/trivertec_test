@@ -76,6 +76,7 @@
           <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>
           <li>
               {% if user.is_authenticated %}
+                  <span>{{ user.username }}</span>
               <a class="nav-link scrollto" href="{% url 'account_logout' %}">Выход</a></li>
             {% else %}
                   <a class="nav-link scrollto" href="{% url 'account_login' %}">Личный кабинет</a></li>
