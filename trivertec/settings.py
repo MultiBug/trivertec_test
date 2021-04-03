@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'snowpenguin.django.recaptcha3',
 ]
 
 MIDDLEWARE = [
@@ -148,3 +149,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+
+RECAPTCHA_PUBLIC_KEY = '6LdUj5oaAAAAAD6kFf3VAOXbQEKK1RptEcTLkCsp'
+RECAPTCHA_PRIVATE_KEY = '6LdUj5oaAAAAAI7SDWx56nqPn-YvEW9eH3pTClkT'
+RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_SCORE_THRESHOLD = 0.5
