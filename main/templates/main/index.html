@@ -34,6 +34,8 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    {% recaptcha_init %}
+{%  recaptcha_ready action_name='homepage' %}
 </head>
 
 <body>
@@ -555,26 +557,27 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="{% static 'main/contact.php' %}" method="post" role="form" class="php-email-form">
+            <form action="{% url 'feedback_view' %}" method="POST">
+                {% csrf_token %}
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
+                  <input type="text" name="phone" class="form-control" id="phone" placeholder="Телефон для связи" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="email@example.com" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Тема" required>
+                <input type="text" class="form-control" name="name" id="name" placeholder="ФИО отправителя" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Введите соощение" required></textarea>
+                <textarea class="form-control" name="description" rows="5" placeholder="Введите сообщение" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Отправка</div>
+                <!--<div class="loading">Отправка</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Ваше сообщение отправлено. Спасибо!</div>
-              </div>
+              </div>-->
               <div class="text-center"><button type="submit">Отправить сообщение</button></div>
             </form>
           </div>
