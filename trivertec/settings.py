@@ -70,11 +70,10 @@ WSGI_APPLICATION = 'trivertec.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'TVC_data',
-        'USER': 'root',
-        'PASSWORD': '11231990',
+        'NAME': 'u1332496_default',
+        'USER': 'u1332496_default',
+        'PASSWORD': '!L6zKMww',
         'HOST': 'localhost',
-        'PORT': '3306',
     }
 }
 
@@ -120,6 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static"
